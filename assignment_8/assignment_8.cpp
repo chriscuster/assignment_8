@@ -3,7 +3,6 @@ Christopher Custer
 Assignment 8
 Description: create code that will output images using different functions.
 
-
 */
 
 // Code provided for assignment 8
@@ -85,8 +84,16 @@ int main()
 
 void fish()
 {
+	const string filename = "fish.txt";
 	ofstream outfile;
-	outfile.open("fish.txt");
+	outfile.open(filename);
+
+	if (!outfile.is_open())
+	{
+		cout << "Could not open " << filename << endl;
+		exit(0);
+	}
+
 	int size = 1;
 	int rotation = 1;
 	int count = 5;
@@ -106,8 +113,15 @@ void fish()
 //function algorithm here along with function documentation
 void archimedean()
 {
+	const string filename = "archimedean.txt";
 	ofstream outfile;
-	outfile.open("archimedian.txt");
+	outfile.open(filename);
+
+	if (!outfile.is_open())
+	{
+		cout << "Could not open " << filename << endl;
+		exit(0);
+	}
 
 	int count = 3;
 	int size = 1;
@@ -118,6 +132,7 @@ void archimedean()
 
 		outfile << x << " " << y << endl;
 	}
+
 
 
 }
@@ -147,6 +162,8 @@ double mysteryX(double t)
 			+ (5 / 4) * pow((abs(abs(t) - 4) - abs(abs(t) - 5) - 1), 3)
 			- 5.3 * cos(((PI / 2) + asin(47 / 53)) * ((abs(abs(t) - 7) - abs(abs(t) - 8) - 1) / 2)) + 2.8);
 
+	return x;
+
 }
 
 //function algorithm here along with function documentation
@@ -160,8 +177,11 @@ double mysteryY(double t)
 		+ (29 / 4) * abs(abs(t) - 5)
 		+ (7 / 16) * pow(abs(abs(t) - 2) - abs(abs(t) - 3) - 1, 4)
 		+ (4.5 * sin((PI / 4) * (abs(abs(t) - 3) - abs(abs(t) - 4) - 1)))
-		- ((3 * sqrt(2)) / 5)*abs(abs(abs(t)-5)-abs(abs(t)-7)
+		- ((3 * sqrt(2)) / 5) * pow(abs(abs(abs(t) - 5) - abs(abs(t) - 7)), 5 / 2)
+		+ 6.4 * sin((PI / 2 + asin(47 / 53)) * ((abs(abs(t) - 7) - abs(abs(t) - 8) + 1) / 2)
+			+ asin(56 / 64)) + 4.95;
 
+	return y;
 }
 
 /* genPlotScript
