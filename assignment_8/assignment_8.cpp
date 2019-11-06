@@ -94,12 +94,16 @@ void fish()
 		exit(0);
 	}
 
-	int size = 1;
+	double size = 1;
 	int rotation = 1;
 	int count = 5;
+	int counter = 0;
 	double offset = 1.2;
 
-	for (double t = 0; t <= (10 * PI); t += 0.1)
+	do
+	{
+			
+	for (double t = 0; t <= ( 10 * PI); t += 0.1)
 	{
 		double x = size * (cos(t) + 2.0 * rotation * cos(t / 2.0));
 		double y = size * sin(t);
@@ -107,7 +111,9 @@ void fish()
 		outfile << x << " " << y << endl;
 
 	}
-
+	size = size * offset;
+	counter++;
+	} while (counter<count);
 
 }
 
@@ -125,7 +131,7 @@ void archimedean()
 		exit(0);
 	}
 
-	int count = 3;
+	int count = 5;
 	int size = 1;
 	for (double t = 0; t < (count * 2 * PI); t += 0.1)
 	{
@@ -142,9 +148,21 @@ void archimedean()
 //function algorithm here along with function documentation
 void mystery()
 {
-	for (int t = -8; t <= 8; t += 0.001)
-	{
+	const string filename = "mystery.txt";
+	ofstream outfile;
+	outfile.open(filename);
 
+	if (!outfile.is_open())
+	{
+		cout << "Could not open " << filename << endl;
+		exit(0);
+	}
+
+	
+
+	for (double t = -8.000; t <= 8.0; t += 0.001)
+	{
+		outfile << mysteryX(t) << " " << mysteryY(t) << endl;
 	}
 
 }
@@ -178,7 +196,7 @@ double mysteryY(double t)
 		- (29 / 4) * abs(abs(t) - 4)
 		+ (29 / 4) * abs(abs(t) - 5)
 		+ (7 / 16) * pow(abs(abs(t) - 2) - abs(abs(t) - 3) - 1, 4)
-		+ (4.5 * sin((PI / 4) * (abs(abs(t) - 3) - abs(abs(t) - 4) - 1)))
+		+ 4.5 * sin((PI / 4) * (abs(abs(t) - 3) - abs(abs(t) - 4) - 1))
 		- ((3 * sqrt(2)) / 5) * pow(abs(abs(abs(t) - 5) - abs(abs(t) - 7)), 5 / 2)
 		+ 6.4 * sin((PI / 2 + asin(47 / 53)) * ((abs(abs(t) - 7) - abs(abs(t) - 8) + 1) / 2)
 			+ asin(56 / 64)) + 4.95;
