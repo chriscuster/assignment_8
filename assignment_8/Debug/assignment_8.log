@@ -1,0 +1,5 @@
+﻿  assignment_8.cpp
+C:\git\assignment_8\assignment_8\assignment_8.cpp(105,9): warning C4244:  'initializing': conversion from 'double' to 'int', possible loss of data
+C:\git\assignment_8\assignment_8\assignment_8.cpp(106,9): warning C4244:  'initializing': conversion from 'double' to 'int', possible loss of data
+C:\git\assignment_8\assignment_8\assignment_8.cpp(128): error C4716:  'mysteryX': must return a value
+C:\git\assignment_8\assignment_8\assignment_8.cpp(136): error C4716:  'mysteryY': must return a value
