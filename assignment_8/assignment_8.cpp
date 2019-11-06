@@ -104,6 +104,8 @@ void fish()
 		double x = size * (cos(t) + 2.0 * rotation * cos(t / 2.0));
 		double y = size * sin(t);
 
+		outfile << x << " " << y << endl;
+
 	}
 
 
